@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Song Chart Parser</title>
+
+    <script type="module" defer src="index.js"></script>
+    <script type="module" defer src="initNoteToNum.js"></script>
+    <script type="module" defer src="parseReWrite.js"></script>
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        box-sizing: border-box;
+      }
+      .grow {
+        flex-grow: 1;
+      }
+      .hidden {
+        display: none !important;
+      }
+      .column {
+        display: flex;
+        flex-direction: column;
+      }
+      .scrollable {
+        overflow-y: auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <form id="song-chart-form" class="column grow">
+      <label for="song-chart-input">Paste your song chart here:</label>
+      <textarea
+        class="grow"
+        name="song-chart-input"
+        id="song-chart-input"
+        rows="40"
+        cols="100"
+      ></textarea>
+      <button type="submit">Submit</button>
+    </form>
+
+    <form id="song-chart-output-container" class="column grow hidden">
+      <pre class="grow scrollable" id="song-chart-output"></pre>
+      <button>Edit</button>
+
+      <label for="transpose-key">Transposition Key:</label>
+      <input type="text" id="transpose-key" name="transpose-key" />
+    </form>
+  </body>
+</html>
